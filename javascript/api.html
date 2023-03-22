@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+        name:<input type="text" name="fname" id="fname">
+        email:<input type="email" name="mail" id="mail">
+        gender:<input type="radio" name="gender" value="male" id="male">male
+       <input type="radio" name="gender" value="female" id="female">female
+        status:<input type="radio" name="status" value="active" id="active">active
+       <input type="radio" name="status" value="inactive" id="inactive">inactive
+       <button type="button" onclick="adddata(fname.value,mail.value,gender,status)">add</button>
+    </form>
+    <table id="table">
+
+    </table>
+</body>
+<script>
+    async function getdata(){
+        var a=await fetch("https://gorest.co.in/public/v2/users");
+        var data=await a.json();
+        console.log(data)
+        binddata(data)
+        // console.log(a)
+    }
+
+    function binddata(data){
+        $.each(data,(index,d)=>{
+            $("<tr></tr>").append($("<td></td>").html(d.id))
+            .append($("<td></td>").html(d.name))
+            .append($("<td></td>").html(d.email))
+            .append($("<td></td>").html(d.gender))
+            .append($("<td></td>").html(d.status))
+            .appendTo("#table")
+        })
+    }
+    getdata()
+
+    
+</script>
+</html>

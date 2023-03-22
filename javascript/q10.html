@@ -1,0 +1,33 @@
+<!-- Write a function that takes an array of strings as argument. Return the longest string.
+myFunction(['help', 'me'])
+Expected 'help'
+myFunction(['I', 'need', 'candy'])
+Expected 'candy' -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var arr=[]
+    for(i=0;i<=5;i++){
+        var a=prompt("array is")
+        arr.push(a)
+    }
+    document.write("array is:",arr)
+    var str=''
+    arr.forEach(function(item){
+        if(item.length>str.length){
+            str=item
+        }
+    })
+    console.log(str)
+</script>
+</html>

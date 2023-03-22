@@ -1,0 +1,38 @@
+<!-- Given an input string, reverse the string word by word, the first word will be the last, and so on.
+Examples
+reverseWords(" the sky is blue") ➞ "blue is sky the"
+reverseWords("hello world! ") ➞ "world! hello" -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <lable for="str">enter string:</lable>
+    <input type="text" placeholder="enter your string" id="str">
+    <button type="button" id="reverse">reverse string</button>
+    <div id="data">
+        
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+  $("#reverse").click(function(){
+    var a=$("#str").val()
+    console.log(a)
+    var b=a.split(" ")
+    console.log(b)
+    var c=b.reverse()
+    console.log(c)
+    var d=c.join(" ")
+    console.log(d)
+    $("#data").text(d)
+  })
+})
+    </script>
+</html>

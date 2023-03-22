@@ -1,0 +1,30 @@
+<!-- program to merge property of two objects 
+ // object1 const person = { name: 'Jack', age:26 } // object 2 const student = { gender: 'male' }
+ // output = { name: "Jack", age: 26, gender: "male" } -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    
+ </body>
+ <script>
+    let obj1={
+        name:'jack',
+        age:26
+    }
+    let obj2={
+        gender:'male'
+    }
+    let obj3={
+        ...obj1,
+        ...obj2
+    }
+    document.write(Object.entries(obj3))
+ </script>
+ </html>
